@@ -77,6 +77,8 @@ else
         <?php echo $output; ?>
         </span>
     </div>
+    <br />
+    <a href="javascript: history.go(-1);" style="text-decoration: none; color: #ff9f49;">Go back</a>
 <?php
 }
 ?>
