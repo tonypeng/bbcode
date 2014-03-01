@@ -1,0 +1,40 @@
+@font-face {
+    font-family: SegoeUI;
+    src: local('Segoe UI'), local('Helvetica Neue');
+}
+
+@font-face {
+    font-family: SegoeUILight;
+    src: local('Segoe UI Light'), local('Segoe UI Semilight'), local('Segoe UI'), local('Helvetica Neue');
+    font-weight: 100;
+}
+
+body {
+    font-family: 'Dosis', SegoeUILight, 'Segoe UI Light', SegoeUI, 'Segoe UI', sans-serif;
+}
+
+.inputBox {
+    position:fixed;
+    z-index: 100;
+    background-color: #f9f9f9;
+    top:50%;
+    left:50%;
+    margin:-150px 0 0 -250px;
+    width:500px;
+    height:300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.revisionBox {
+    background-color: #fcfcfc;
+    width:500px;
+    height:300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
