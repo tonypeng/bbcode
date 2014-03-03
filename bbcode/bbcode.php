@@ -205,7 +205,6 @@ class BBCode
 
         if(count($children) > 0)
         {
-            //This needs to be fixed...
             foreach($children AS $child)
             {
                 $recursive_ = $this->generateText($child);
@@ -214,13 +213,15 @@ class BBCode
             }
         }
 
+        $parsed = $wrapped;
+
         foreach($recursive AS $rec)
         {
             if(!empty($rec[0]))
             {
                 $toreplace = "[".$rec[0]."]".$rec[1]."[/".$rec[0]."]";
 
-                $wrapped = str_ireplace($toreplace, $rec[2], $wrapped);
+                $parsed = str_ireplace($toreplace, $rec[2], $parsed);
             }
         }
 
@@ -228,7 +229,7 @@ class BBCode
 
         $output[0] = $tag;
         $output[1] = $wrapped;
-        $output[2] = call_user_func($handler, $wrapped, array(), array());
+        $output[2] = call_user_func($handler, $parsed, array(), array()); // parse the text
 
         return $output;
     }

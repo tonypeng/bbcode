@@ -41,7 +41,8 @@ if(!isset($_POST['submit']))
     <span style="text-decoration: underline;">8.28.10</span><br />Started on parser.  Parser can detect unfinished <strong>first-level</strong> bbcode.  Recursive checking (child bbcode) is not implemented yet.<br /><br />
     <span style="text-decoration: underline;">8.29.10</span><br />Recursive parsing just about done.  There may still be bugs thoughl more testing needs to be done.  Next up: Tag fixing when invalid tags are detected.<br /><br />
     <span style="text-decoration: underline;">8.31.10</span><br />Parser is pretty much done.  (Most) Bugs have been fixed.<br /><br />
-    <span style="text-decoration: underline;">2.28.14</span><br />3 and a half years later!  Fixed a long-standing bug in which text with no mark-up in child text is ignored.  Moved to OOPHP and did some housekeeping.
+    <span style="text-decoration: underline;">2.28.14</span><br />3 and a half years later!  Fixed a long-standing bug in which text with no mark-up in child text is ignored.  Moved to OOPHP and did some housekeeping.<br /><br />
+    <span style="text-decoration: underline;">3.2.14</span><br />Fixed a bug with level >2 bbcode.
 </div>
 <?php
 }
@@ -56,6 +57,7 @@ else
     $bbcodeParser->addTagHandler('b', 'bbcode_parse_bold');
     $bbcodeParser->addTagHandler('i', 'bbcode_parse_italics');
     $bbcodeParser->addTagHandler('u', 'bbcode_parse_underline');
+    $bbcodeParser->addTagHandler('s', 'bbcode_parse_strike');
 
     $syntaxTree = $bbcodeParser->parse($text, true);
     $output = $bbcodeParser->treeToText($syntaxTree);

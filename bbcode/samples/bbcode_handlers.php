@@ -24,3 +24,8 @@ function bbcode_parse_underline($text)
 {
     return "<span style=\"text-decoration:underline;\">".$text."</span>";
 }
+
+function bbcode_parse_strike($text)
+{
+    return "<span style=\"text-decoration:line-through;\">".$text."</span>";
+}
